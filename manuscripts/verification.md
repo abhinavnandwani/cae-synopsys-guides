@@ -1,7 +1,7 @@
 # Verification on CAE
 By Abhinav Nandwani
 
-Use this guide to compile a SystemVerilog test, inspect its source and waveforms, generate coverage, and prove that the test catches a known bug. The terminal and GUI sections use the same small register example. The final section connects this workflow to the team's test plan and verification scaffolding.
+Use this guide to compile a SystemVerilog test, inspect its source and waveforms, generate coverage, and check that the test catches a known bug. The terminal and GUI sections use the same small register example.
 
 {{ACCESS}}
 
@@ -139,11 +139,11 @@ In the CAE desktop file manager, open the passing run's `coverage_report` folder
 
 As a follow-on exercise, reassert reset after capturing data, check the resulting output at the appropriate clock edge, and regenerate the report in a fresh run. Confirm both the new behavior and the previously missing transition. Increasing coverage without a meaningful check is not sufficient.
 
-Condition and assertion coverage do not have meaningful DUT targets in this tiny example. High code coverage does not establish arithmetic correctness, protocol behavior, corner cases, or interactions between units. The project test plan must connect requirements to stimulus, checks, and suitable coverage goals.
+Condition and assertion coverage do not have meaningful DUT targets in this tiny example. High code coverage does not establish arithmetic correctness, protocol behavior, corner cases, or interactions between units.
 
 <!-- page -->
-## Turn the exercise into verification infrastructure
-For each project layer, specify the behavior to verify, reference model or expected result, stimulus, checks, coverage, and reproducible command. Decide where C++, SystemVerilog, UVM, or another method fits the layer. The availability of a UVM package does not by itself choose the methodology.
+## Reproduce a saved simulation
+Keep the source and run files together so you can investigate a result later. These records help distinguish a source change from a tool or configuration difference.
 
 | What a runnable test should retain | Why it is needed |
 | --- | --- |
@@ -159,8 +159,8 @@ If compilation fails, read the first relevant error before investigating later e
 
 If a tool prints only a CAE launcher warning, return to the host shell and load the module before entering the container. For a license failure, retain the exact diagnostic and tool version. For an unresponsive GUI, first allow startup or loading to complete; do not repeatedly start duplicate copies that each consume resources.
 
-## Completion check
-Complete the passing and deliberately failing runs, explain the waveform at each expected edge, identify at least one coverage limitation, and show another teammate how to reproduce the run from its command and source revision. The team's project deliverables remain the architecture-based test plan, per-layer methodology proposal, and hardened runnable verification scaffolding.
+## Check your setup
+The passing run should contain `SB_SNPS_SIM_PASS`; the deliberately failing run should contain `data failed` without that pass marker. In Verdi, compare the reset and data transitions with the table above. In URG, check which reset transition is missing from toggle coverage.
 
 Tested on CAE with VCS Y-2026.03_Full64, Verdi Y-2026.03, and URG Y-2026.03. Setup reference: https://kb.wisc.edu/cae-software-guide
 

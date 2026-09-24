@@ -1,7 +1,7 @@
 # Synthesis and Physical Design on CAE
 By Abhinav Nandwani
 
-Use this guide to run synthesis, inspect mapped logic and timing in Design Vision, and bring a small design into IC Compiler II for physical inspection. Keep the terminal transcript, scripts, and GUI observations together. The register example teaches the workflow; its area and timing are not accelerator estimates.
+Use this guide to run synthesis, inspect mapped logic and timing in Design Vision, and bring a small design into IC Compiler II for physical inspection. Keep the terminal transcript, scripts, and GUI observations together. The measurements in this guide describe only the one-register example.
 
 {{ACCESS}}
 
@@ -49,7 +49,7 @@ set_input_delay 1 -clock clk [get_ports {rst d}]
 set_output_delay 1 -clock clk [get_ports q]
 ```
 
-The period is 10 ns. The input delay reserves time for the external launch side; the output delay reserves time for the external capture side. These values are assumptions for learning the tools, not a project timing budget. Real constraints must also address applicable generated clocks, input transition, output load, uncertainty, exceptions, and operating scenarios.
+The period is 10 ns. The input delay reserves time for the external launch side; the output delay reserves time for the external capture side. These values are assumptions for this example. Constraints for other designs may also need generated clocks, input transition, output load, uncertainty, exceptions, and operating scenarios.
 
 Use these Tcl commands in `dc_shell` or Design Vision after loading the design:
 
@@ -125,7 +125,7 @@ ICC2 needs physical technology and cell abstracts in addition to logical timing 
 
 The accessible CAE SAED32 EDK contains the timing `.db`, standard-cell LEF, and a Milkyway technology file used by this teaching exercise. The separate SAED32 PDK directory returned permission denied for the tested account. These are different paths. Keep licensed library data on CAE; the companion package contains scripts referencing installed data, not copies of that data.
 
-The teaching corner is RVT, TT, 1.05 V, 25 C. It is not a project process or signoff-corner decision. Agree the project library, corners, RC setup, and constraints before reporting meaningful PPA.
+The teaching corner is RVT, TT, 1.05 V, 25 C. Area and timing results depend on the library, corner, parasitic assumptions, and constraints used for the run.
 
 <!-- page -->
 ## Prepare the teaching reference library from the terminal
@@ -185,9 +185,9 @@ save_block
 save_lib
 ```
 
-The boundary and offset are teaching dimensions in the technology's distance units. The tool snaps the core to the site rows. This tiny design deliberately leaves plenty of empty space. It does not establish the accelerator's utilization target or floorplan dimensions.
+The boundary and offset are teaching dimensions in the technology's distance units. The tool snaps the core to the site rows. This tiny design deliberately leaves plenty of empty space.
 
-Check the successful-link message, floorplan-completion message, cell location/status, and saved files. The tested technology also prompted ICC2 to derive missing preferred routing directions. Review that setup before routing a project design. The completion marker only means the script reached its end; errors earlier in the log still need attention.
+Check the successful-link message, floorplan-completion message, cell location/status, and saved files. The tested technology also prompted ICC2 to derive missing preferred routing directions. Review that setup before attempting routing. The completion marker only means the script reached its end; errors earlier in the log still need attention.
 
 <!-- page -->
 ## Open and inspect the physical design in the GUI
@@ -231,24 +231,9 @@ Inspect messages as part of GUI use. Open the Console tab at the bottom and use 
 ## Save a checkpoint and know what remains
 After an intentional change, save the block and library using `save_block` and `save_lib`. Keep the script and log that produced that state. Reopening the saved block is a useful check that the result is reproducible beyond the current GUI session.
 
-The demonstrated physical exercise ends after import, floorplan initialization, and initial placement. It has not built a power grid, assigned a final pin plan, performed detailed legalization, constructed the clock tree, routed signals, extracted final parasitics, or passed signoff checks. Before extending it, establish the approved technology, RC data, scenarios, power setup, and physical checks for the project.
+The demonstrated physical exercise ends after import, floorplan initialization, and initial placement. It has not built a power grid, assigned a final pin plan, performed detailed legalization, constructed the clock tree, routed signals, extracted final parasitics, or passed signoff checks.
 
 Do not hide a warning by suppressing it just to get a cleaner screenshot. Record whether it is a teaching-library limitation, a missing flow input, or a real design problem. Separate those from the measured outcomes of a completed implementation stage.
-
-<!-- page -->
-## Build chip-level and per-unit runs
-Keep one explicit configuration for the chip and one for each unit. Each configuration should identify its top module, ordered source manifest, parameters, clocks, interface budgets, library/corner, and implementation status. A stub may make the flow runnable while RTL is unfinished, but its outputs and timing assumptions must be visible in the run record.
-
-| Evidence to retain for each target | Review question |
-| --- | --- |
-| Input manifest and revision | Exactly what design and stubs were implemented? |
-| Library and constraints | Under what assumptions are the numbers meaningful? |
-| Logs and design checks | Did the tool resolve references and complete each stage? |
-| Mapped netlist and SDC | Can the next stage consume the result reproducibly? |
-| Saved physical block and stage | Is this imported, floorplanned, placed, clocked, or routed? |
-| Area, timing, congestion, and violations | What passes, what fails, and what remains unmeasured? |
-
-The immediate project work is a runnable chip-level flow plus separate unit runs with clearly marked stubs where necessary. Keep the flow reproducible as real blocks arrive. Do not present stub area as an estimate of the missing block or an empty timing report as closure.
 
 ## Troubleshoot by stage
 For synthesis, start with source loading, top selection, linking, and constraints. For physical import, start with technology and reference libraries, cell/pin resolution, and netlist consistency. For placement, inspect sites, floorplan geometry, legal cell locations, and power connectivity before tuning optimization options.

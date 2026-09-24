@@ -3,7 +3,6 @@
 By Abhinav Nandwani
 
 These exercises use a single register to check access and explain the tools.
-They do not complete the accelerator verification or synthesis deliverables.
 
 In a CAE terminal, from the exercise directory:
 
@@ -30,8 +29,8 @@ tested CAE environment, so the runner checks the log as well as the process
 exit code. Its files are isolated in `negative/`.
 
 The synthesis example uses the installed SAED32 RVT TT 1.05 V / 25 C library.
-It is a teaching default, not the project's process selection. You can set
-`SB_TARGET_LIBRARY` inside the container to an approved alternative `.db`.
+You can set `SB_TARGET_LIBRARY` inside the container to use another installed
+timing library `.db`.
 Do not commit or distribute licensed libraries or tool binaries.
 
 Exit the container with `exit`. Save work and log out of the Linux desktop

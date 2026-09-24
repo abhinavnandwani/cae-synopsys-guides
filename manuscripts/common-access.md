@@ -11,7 +11,7 @@ Guacamole displays a CAE Linux desktop in your browser. The tools run on the CAE
 
 If you already have an active session, the browser may reconnect without showing every login screen. If sign-in fails, record which prompt failed: UW web sign-in, MFA, or the Linux desktop login. These are different stages.
 
-Official CAE login instructions and screenshots: https://kb.wisc.edu/cae/163323
+More help with Guacamole sign-in, including CAE's official instructions and screenshots: https://kb.wisc.edu/cae/163323
 
 <!-- page -->
 ## Enter the Synopsys environment

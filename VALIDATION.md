@@ -40,8 +40,8 @@ is procedural, not a full class-based UVM environment.
 Physical placement is not a complete P&R or signoff flow. Power planning,
 final pin planning, detailed legalization, clock-tree work, routing, extraction,
 and signoff remain. The PD guide explains the observed library warnings.
-The installed SAED32 RVT library is a teaching default, not a project process
-selection or an accelerator PPA estimate.
+The area and timing measurements describe the one-register example using the
+installed SAED32 RVT library and the exercise constraints.
 
 ## Document editions
 
@@ -53,7 +53,7 @@ Screenshots are real native-resolution captures. The original image files are
 unchanged; cropping is applied in the document or webpage layout. Captures are
 1237 by 793 pixels. The Apps-menu excerpt is displayed at a modest size.
 
-All 32 rendered pages were reviewed for layout. The common login and terminal
+All 31 rendered pages were reviewed for layout. The common login and terminal
 pages match across guides; companion source links vary by guide. The PDFs
 include direct links to the companion code, with full URLs rendered blue and
 underlined.

@@ -1,7 +1,7 @@
 # RTL Development on CAE
 By Abhinav Nandwani
 
-Use this guide to inspect and simulate RTL, debug its behavior in Verdi, run a synthesis sanity check, and inspect the resulting schematic in Design Vision. The small register makes the entire loop observable before you apply it to a compute, control, or memory block.
+Use this guide to inspect and simulate RTL, debug its behavior in Verdi, run a synthesis sanity check, and inspect the resulting schematic in Design Vision. The small register makes the entire loop observable.
 
 {{ACCESS}}
 
@@ -22,8 +22,6 @@ Read the testbench next. `tb` instantiates the design as `dut`, generates the cl
 
 ## Organize source changes before building
 Keep synthesizable design source in `rtl/`, testbench code in `tb/`, and tool scripts in their own directories. Generated netlists, databases, logs, and waveforms belong in run directories. Edit the design source, then rebuild; editing `mapped.v` does not fix the RTL that generated it.
-
-For your real block, write down port names, widths, clock and reset behavior, transaction acceptance, output latency, and backpressure or completion rules before relying on a test. Mark unresolved interface decisions explicitly. The architecture repository is the shared source for the top-level diagram and interface decisions; Compute 1 and Compute 2 continue their independent investigations.
 
 <!-- page -->
 ## Compile and simulate from the terminal
@@ -129,7 +127,7 @@ Select `sb_flop` in Logical Hierarchy. Choose Schematic, then New Schematic View
 
 For larger blocks, inspect register boundaries, muxing, arithmetic widths, and unexpected constant or disconnected signals. An unexpectedly small design can mean intended logic was optimized away because outputs were unused or constraints and connectivity were wrong.
 
-For readability, Design Vision exposes font controls under View, Preferences, Style Settings. Change Normal for labels and Monospace for report text. Prefer enlarging the relevant pane and text before taking a screenshot. Keep the saved source and reports with the image so a reviewer can inspect the underlying evidence.
+For readability, Design Vision exposes font controls under View, Preferences, Style Settings. Change Normal for labels and Monospace for report text. Prefer enlarging the relevant pane and text before taking a screenshot. Keep the saved source and reports with the image so you can trace it back to the run.
 
 <!-- page -->
 ## Connect a timing report to the source
@@ -146,18 +144,9 @@ report_constraint -all_violators
 report_area
 ```
 
-Positive slack on one reported path does not prove that every path is constrained or that physical timing will pass. Give the PD team the source manifest and timing intent, not just a favorable screenshot.
+Positive slack on one reported path does not prove that every path is constrained or that physical timing will pass.
 
-## Prepare a useful RTL handoff
-| Handoff item | What to include |
-| --- | --- |
-| Source manifest | Revision, top, ordered sources, includes, packages, and parameters. |
-| Interface contract | Ports, widths, clocks, reset behavior, transactions, latency, and backpressure. |
-| Implementation status | Identify real RTL, stubs, black boxes, and unresolved behavior. |
-| Verification evidence | Commands, checks, known limitations, logs, and a representative waveform. |
-| Synthesis evidence | Tool and library, constraints, diagnostics, mapped outputs, area, and timing. |
-
-Complete one edit, rebuild, simulation inspection, synthesis check, and schematic inspection on your block before reporting that its development loop works. Keep Compute 1 and Compute 2 deliverables independent; use the architecture interfaces as the shared reference. Close Verdi and Design Vision when finished, then leave the container and log out of the CAE desktop.
+Close Verdi and Design Vision when finished, then leave the container and log out of the CAE desktop.
 
 Setup reference: https://kb.wisc.edu/cae-software-guide
 
