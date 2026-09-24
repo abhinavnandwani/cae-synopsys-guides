@@ -1,0 +1,30 @@
+manuscripts/verification.md
+  s_a4fdefbacc4ddc::t_ac1cd64acead92 4,142,145-146,162-163
+VALIDATION.md
+  s_a4fdefbacc4ddc::t_ac1cd64acead92 43-44
+  s_a4fdefbacc4ddc::t_a57172c1630e64 56
+lab/README.md
+  s_a4fdefbacc4ddc::t_ac1cd64acead92 32-33
+manuscripts/common-access.md
+  s_a4fdefbacc4ddc::t_5e0d3ffbeb4ceb 14
+manuscripts/pd.md
+  s_a4fdefbacc4ddc::t_ac1cd64acead92 4,52,128,188,190,234
+manuscripts/rtl.md
+  s_a4fdefbacc4ddc::t_ac1cd64acead92 4,130,147,149
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f5e1cafdc2260bb3e344984618d5da16c2a44f4a",
+  "prompts": {},
+  "sessions": {
+    "s_a4fdefbacc4ddc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c6c2-231a-7a30-bbf3-f68a9d08902d",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "abhinavnandwani <abhu.srt@gmail.com>"
+    }
+  }
+}
