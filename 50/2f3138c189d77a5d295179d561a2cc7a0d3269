@@ -1,0 +1,51 @@
+README.md
+  s_a4fdefbacc4ddc::t_ae5bb7cc57984c 1-130
+VALIDATION.md
+  s_a4fdefbacc4ddc::t_88e4de0d4bdd2e 1-61
+lab/README.md
+  s_a4fdefbacc4ddc::t_2183edc8269e79 1-68
+lab/physical/build_reference.tcl
+  s_a4fdefbacc4ddc::t_3911b3b2e0d4ba 1-12
+lab/physical/floorplan.tcl
+  s_a4fdefbacc4ddc::t_58e17de5d84652 1-15
+lab/rtl/sb_flop.v
+  s_a4fdefbacc4ddc::t_d7462a77f48dbf 1-5
+lab/run_lab.py
+  s_a4fdefbacc4ddc::t_1dbcec51eb27a7 1-91
+lab/synth/run.tcl
+  s_a4fdefbacc4ddc::t_8a626504b56689 1-19
+lab/tb/tb.sv
+  s_a4fdefbacc4ddc::t_cfc8ab5bc462ad 1-24
+manuscripts/pd.md
+  s_a4fdefbacc4ddc::t_06069aeb38c229 1-262
+manuscripts/rtl.md
+  s_a4fdefbacc4ddc::t_61f1cc8ade9aba 1-164
+manuscripts/verification.md
+  s_a4fdefbacc4ddc::t_ca462f55793fdd 1-167
+.gitignore
+  s_a4fdefbacc4ddc::t_30e0181588d14a 1-16
+build_guides.py
+  s_a4fdefbacc4ddc::t_4d757f89a4960c 1-34
+build_handouts.py
+  s_a4fdefbacc4ddc::t_e864bc1ebe58e6 1-196
+manuscripts/common-access.md
+  s_a4fdefbacc4ddc::t_8dd23e7362b0a9 1-79
+requirements-docs.txt
+  s_a4fdefbacc4ddc::t_0565f6738948c1 1-2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "502f3138c189d77a5d295179d561a2cc7a0d3269",
+  "prompts": {},
+  "sessions": {
+    "s_a4fdefbacc4ddc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c6c2-231a-7a30-bbf3-f68a9d08902d",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "abhinavnandwani <abhu.srt@gmail.com>"
+    }
+  }
+}
