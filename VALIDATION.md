@@ -43,17 +43,15 @@ and signoff remain. The PD guide explains the observed library warnings.
 The installed SAED32 RVT library is a teaching default, not a project process
 selection or an accelerator PPA estimate.
 
-## Rebrand and document checks
+## Document editions
 
-The rebrand changes authorship presentation and package paths, not the tested
-RTL, testbench, runner, or tool scripts. Those executable files are retained
-byte for byte from the validated exercise. All three guides use Abhinav Nandwani
-as the visible author and in document metadata.
+The PDF, Word, and web editions use the Markdown files in `manuscripts/`,
+including the shared access instructions in `common-access.md`. The repository
+README describes how to rebuild them.
 
-Screenshots are real native-resolution captures. Their original PNGs are
-unchanged; cropping is applied within the document. Newer captures are
-1237 by 793 pixels. The smaller Apps-menu screenshot is displayed at a modest
-size. Temporary Verdi and Design Vision font settings were restored after capture.
+Screenshots are real native-resolution captures. The original image files are
+unchanged; cropping is applied in the document or webpage layout. Captures are
+1237 by 793 pixels. The Apps-menu excerpt is displayed at a modest size.
 
 All 32 rendered pages were reviewed for layout. Shared access pages were also
 checked to be byte-identical across the three renders. Each PDF has six unique
