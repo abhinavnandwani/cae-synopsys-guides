@@ -114,17 +114,3 @@ After updating the manuscripts and rebuilding the PDFs, run that renderer with
 `--source` pointing at this clone. It copies the published PDFs and original
 screenshots and records source hashes so the web and offline editions can be
 checked together. Do not edit the generated website guide text separately.
-
-The initial import includes previously prepared AI-assisted guides and code.
-Their original creation predates this repository's Git history; the import
-does not claim retroactive line-level attribution.
-
-## Sharing with the club
-
-Maintain one canonical repository under Abhinav Nandwani's account. Share its
-README and the relevant guide link with each team. Club repositories can link
-here instead of copying the PDFs and lab into each repository. Members can
-read the PDF online, download it, or clone everything once and pull updates.
-
-Only the authored guides, screenshots, and teaching sources belong here.
-Generated tool runs, library databases, NDMs, and licensed tool files stay on CAE.
