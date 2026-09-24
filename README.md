@@ -17,64 +17,19 @@ Read the full guides online at
 The website adds section links and copyable commands. Its pages and these PDFs
 are generated from the same manuscripts in this repository.
 
-## Get the lab onto CAE
+## Example code
 
-Open [CAE Guacamole](https://guacamole.cae.wisc.edu), complete the UW web
-sign-in and the second Linux login, then open **Apps → Terminal**.
-The guides explain both login stages in detail.
+| File | Purpose |
+| --- | --- |
+| [sb_flop.v](lab/rtl/sb_flop.v) | One-bit register RTL |
+| [tb.sv](lab/tb/tb.sv) | Passing test and injected failure |
+| [run_lab.py](lab/run_lab.py) | Simulation, coverage, and synthesis runner |
+| [run.tcl](lab/synth/run.tcl) | Synthesis and timing constraints |
+| [build_reference.tcl](lab/physical/build_reference.tcl) | ICC2 reference library setup |
+| [floorplan.tcl](lab/physical/floorplan.tcl) | Physical import and initial placement |
 
-In the CAE **host terminal**, before entering the Synopsys container:
-
-```sh
-cd ~
-git clone https://github.com/abhinavnandwani/cae-synopsys-guides.git
-cd cae-synopsys-guides/lab
-module load synopsys/suite
-synopsys-run
-```
-
-Inside the container, run the exercise for your guide:
-
-```sh
-cd ~/cae-synopsys-guides/lab
-python3 run_lab.py simulation
-python3 run_lab.py synthesis
-```
-
-Follow the PDF for interpreting the output and opening the GUI. Physical design
-has additional steps in its guide and the [lab README](lab/README.md).
-The tools and licenses come from CAE, so running these commands on a laptop
-without the CAE environment will not run the lab.
-
-### Laptop transfer alternative
-
-If cloning directly on CAE is unavailable, clone on your laptop, then copy it:
-
-```sh
-git clone https://github.com/abhinavnandwani/cae-synopsys-guides.git
-scp -r cae-synopsys-guides YOUR_NETID@best-tux.cae.wisc.edu:~/
-```
-
-Replace `YOUR_NETID`. Verify a new host key against the
-[CAE SSH fingerprint](https://kb.wisc.edu/moodle/162780).
-You can also use GitHub's **Code → Download ZIP**. Extract the ZIP and rename
-the resulting folder to `cae-synopsys-guides` before using the SCP command.
-Guacamole's CAE deployment does not provide file transfer.
-
-## Get later updates
-
-For a Git clone, return to the CAE host shell and run:
-
-```sh
-cd ~/cae-synopsys-guides
-git status
-git pull --ff-only
-```
-
-Run outputs are ignored by Git. If you edited the teaching source, save your
-work on a branch and commit it before updating. If Git reports a conflict,
-stop and resolve it; do not delete your changes. A ZIP download has no Git
-history, so download a fresh copy into a separate folder for an updated version.
+See the [lab instructions](lab/README.md) for the run commands. Each guide covers
+the CAE environment and the relevant terminal and GUI workflow.
 
 ## Contents
 
@@ -86,7 +41,7 @@ history, so download a fresh copy into a separate folder for an updated version.
 - [VALIDATION.md](VALIDATION.md): versions, observed results, and flow limits.
 
 The example exercises were tested on CAE on 23 September 2026. The screenshots
-retain the original dated demonstration paths; use the current clone paths in
+retain the original dated demonstration paths; use the paths in
 the command blocks. The RTL identifiers and result markers are unchanged so
 they continue to match the validated logs and screenshots.
 
@@ -111,6 +66,6 @@ after editing, including link appearance and destinations.
 The website renderer lives in
 [`abhinavnandwani.github.io/scripts/build_learning.py`](https://github.com/abhinavnandwani/abhinavnandwani.github.io/blob/master/scripts/build_learning.py).
 After updating the manuscripts and rebuilding the PDFs, run that renderer with
-`--source` pointing at this clone. It copies the published PDFs and original
+`--source` pointing at this repository. It copies the published PDFs and original
 screenshots and records source hashes so the web and offline editions can be
 checked together. Do not edit the generated website guide text separately.

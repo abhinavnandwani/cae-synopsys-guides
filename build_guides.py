@@ -1,6 +1,7 @@
 """Build the three role-specific guides with original, native-cropped images."""
 from pathlib import Path
 import re
+import json
 import build_handouts as base
 
 ROOT = Path(__file__).parent
@@ -24,9 +25,12 @@ base.CROPS.update({
 
 if __name__ == '__main__':
     common = (ROOT / 'manuscripts/common-access.md').read_text()
+    code_links = json.loads((ROOT / 'manuscripts/code-links.json').read_text())
     for name in ('verification', 'pd', 'rtl'):
         text = (ROOT / 'manuscripts' / (name+'.md')).read_text()
         text = text.replace('{{ACCESS}}', common)
+        links = '\n\n'.join(label + ': https://github.com/abhinavnandwani/cae-synopsys-guides/blob/main/' + path for label, path in code_links[name])
+        text = text.replace('{{CODE_LINKS}}', links)
         if re.search(r'\{\{[A-Z_]+\}\}', text):
             raise ValueError('Unresolved section in '+name)
         target = BUILD / ('cae-'+name+'-handout.md')

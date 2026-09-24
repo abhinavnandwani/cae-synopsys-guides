@@ -5,8 +5,7 @@ By Abhinav Nandwani
 These exercises use a single register to check access and explain the tools.
 They do not complete the accelerator verification or synthesis deliverables.
 
-Clone the repository into your CAE Linux home directory as described in the
-[main README](../README.md). In a CAE terminal:
+In a CAE terminal, from the exercise directory:
 
 ```sh
 cd ~/cae-synopsys-guides/lab

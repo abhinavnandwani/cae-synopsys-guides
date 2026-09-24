@@ -53,7 +53,8 @@ Screenshots are real native-resolution captures. The original image files are
 unchanged; cropping is applied in the document or webpage layout. Captures are
 1237 by 793 pixels. The Apps-menu excerpt is displayed at a modest size.
 
-All 32 rendered pages were reviewed for layout. Shared access pages were also
-checked to be byte-identical across the three renders. Each PDF has six unique
-clickable URL destinations, with the full URLs rendered blue and underlined.
+All 32 rendered pages were reviewed for layout. The common login and terminal
+pages match across guides; companion source links vary by guide. The PDFs
+include direct links to the companion code, with full URLs rendered blue and
+underlined.
 PDF and Word author metadata both identify Abhinav Nandwani.

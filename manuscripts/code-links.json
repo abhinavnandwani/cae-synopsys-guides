@@ -1,0 +1,19 @@
+{
+  "verification": [
+    ["RTL", "lab/rtl/sb_flop.v"],
+    ["Testbench", "lab/tb/tb.sv"],
+    ["Simulation runner", "lab/run_lab.py"]
+  ],
+  "rtl": [
+    ["RTL", "lab/rtl/sb_flop.v"],
+    ["Testbench", "lab/tb/tb.sv"],
+    ["Runner", "lab/run_lab.py"],
+    ["Synthesis script", "lab/synth/run.tcl"]
+  ],
+  "pd": [
+    ["Synthesis runner", "lab/run_lab.py"],
+    ["Synthesis script", "lab/synth/run.tcl"],
+    ["Reference library script", "lab/physical/build_reference.tcl"],
+    ["Floorplan script", "lab/physical/floorplan.tcl"]
+  ]
+}

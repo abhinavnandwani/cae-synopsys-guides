@@ -27,25 +27,10 @@ The prompt becomes `synopsys>`. The module selects the site setup; the container
 
 ![Tool paths inside the working CAE Synopsys container.](v2-environment.png|6.5)
 
-## Get the companion exercise onto CAE
-On your laptop, open Terminal or PowerShell. Clone the guide repository, then copy it to your CAE home directory:
+## Companion code
+{{CODE_LINKS}}
 
-```bash
-git clone https://github.com/abhinavnandwani/cae-synopsys-guides.git
-scp -r cae-synopsys-guides YOUR_NETID@best-tux.cae.wisc.edu:~/
-```
-
-Replace `YOUR_NETID` with your NetID. Check a new SSH host key against the CAE fingerprint at https://kb.wisc.edu/moodle/162780 before accepting. If Git is unavailable, extract the repository ZIP, rename its folder to `cae-synopsys-guides`, then run the SCP line. Guacamole does not provide file transfer. The repository README also explains cloning directly on CAE.
-
-Back in the CAE container terminal:
-
-```bash
-cd ~/cae-synopsys-guides/lab
-pwd
-ls
-```
-
-You should see `run_lab.py`, `rtl`, `tb`, `synth`, and `README.md`. The recorded screenshots use a dated demonstration folder. Use the folder you copied. Keep work in your home directory so it is available across CAE hosts.
+Commands below use `~/cae-synopsys-guides/lab` as the exercise directory. The recorded screenshots show the original dated demonstration folder.
 
 <!-- page -->
 ## Work confidently in the terminal
@@ -53,7 +38,7 @@ The current directory affects relative paths. `pwd` prints it, `ls` lists files,
 
 | Prompt or location | Commands that belong there |
 | --- | --- |
-| Laptop Terminal or PowerShell | `ssh` and `scp` to reach CAE or transfer files. |
+| Laptop Terminal or PowerShell | `ssh` to reach the CAE host shell. |
 | CAE host shell | `module load synopsys/suite`, then `synopsys-run`. |
 | Container `synopsys>` | Linux commands, `python3 run_lab.py`, `vcs`, `verdi`, `dc_shell`, and `icc2_shell`. |
 | Tool prompt such as `dc_shell>` | Tool Tcl commands such as `read_ddc`, `report_timing`, and `help`. |
