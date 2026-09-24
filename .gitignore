@@ -1,0 +1,16 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+.build/
+lab/runs/
+*.log
+*.fsdb
+*.vcd
+*.ddc
+*.db
+*.ndm
+*.dlib/
+*.vdb/
+simv*
+csrc/
