@@ -1,0 +1,29 @@
+manuscripts/common-access.md
+  s_a4fdefbacc4ddc::t_5ffe94f04ac48e 30-31,33,41
+VALIDATION.md
+  s_a4fdefbacc4ddc::t_e67371694222b3 56-59
+manuscripts/code-links.json
+  s_a4fdefbacc4ddc::t_5ffe94f04ac48e 1-19
+build_guides.py
+  s_a4fdefbacc4ddc::t_5ffe94f04ac48e 4,28,32-33
+lab/README.md
+  s_a4fdefbacc4ddc::t_5ffe94f04ac48e 8
+README.md
+  s_a4fdefbacc4ddc::t_68865fdcf3b22e 20,22-29,31-32,44,69
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "97abfed0ce36f8d72272af732477c18ab947607a",
+  "prompts": {},
+  "sessions": {
+    "s_a4fdefbacc4ddc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c6c2-231a-7a30-bbf3-f68a9d08902d",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "abhinavnandwani <abhu.srt@gmail.com>"
+    }
+  }
+}
